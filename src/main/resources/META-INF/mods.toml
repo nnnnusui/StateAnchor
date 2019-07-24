@@ -1,0 +1,39 @@
+modLoader="javafml" #mandatory
+loaderVersion="[28,)" #mandatory (26 is current forge version)
+
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL="https://github.com/nnnnusui/StateAnchor/issues" #optional
+
+[[mods]] #mandatory
+modId="stateanchor" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="State Anchor" #mandatory
+#updateJSONURL="" #optional - https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
+displayURL="https://github.com/nnnnusui/StateAnchor" #optional
+logoFile="stateanchor.png" #optional
+credits="Thanks for you to use this mod" #optional
+authors="nnnnusui" #optional
+description='''
+このmodは、お手元のアイテムを任意のBlockstateで設置することを可能にします。
+
+This mod allows you to place block in any Blockstate from your hand.
+
+
+これを行うためのデータは各アイテムスタックのnbt "StateAnchor" に保存されます。
+
+The data to do this is stored in nbt "StateAnchor" of each item stack.
+''' #mandatory
+
+#[[dependencies.stateanchor]] #optional
+#    modId="forge" #mandatory
+#    mandatory=true #mandatory
+#    versionRange="[28,)" #mandatory
+#    ordering="NONE" # EFORE or AFTER required if the relationship is not mandatory
+#    side="BOTH" # BOTH, CLIENT or SERVER
+
+#[[dependencies.stateanchor]]
+#    modId="minecraft"
+#    mandatory=true
+#    versionRange="[1.14.4]"
+#    ordering="NONE"
+#    side="BOTH"
