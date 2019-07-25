@@ -10,8 +10,8 @@ object StateAnchor{
     private final val header = "key.categories."
     final val category = s"$header$modId"
     object Description{
-      private final val header = "key."
-      final val rotateMode = s"$header$modId.rotateMode"
+      private final val header = s"key.$modId."
+      final val rotateMode = s"${header}rotateMode"
     }
   }
   object NBTKey{
