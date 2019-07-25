@@ -1,8 +1,8 @@
 package com.github.nnnnusui.stateanchor.forgeeventhandler
 
-import com.github.nnnnusui.stateanchor.{KeyBindings, AnchorNBTController, StateAnchor}
+import com.github.nnnnusui.stateanchor.AnchorNBTController.Rich.RichItemStack
+import com.github.nnnnusui.stateanchor.{AnchorNBTController, KeyBindings, StateAnchor}
 import net.minecraft.client.Minecraft
-import net.minecraft.item.ItemStack
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent
@@ -16,11 +16,5 @@ object PutNBTKeyEvent {
     val mainHandItemStack = Minecraft.getInstance().player.getHeldItemMainhand
     if (!mainHandItemStack.hasAnchorNBT)
       AnchorNBTController.putAnchorNBT(mainHandItemStack)
-  }
-
-  implicit class RichItemStack(val itemStack: ItemStack){
-    def hasAnchorNBT: Boolean
-      = (itemStack.hasTag
-      && itemStack.getTag.contains(StateAnchor.NBTKey.root))
   }
 }
