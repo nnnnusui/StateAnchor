@@ -22,8 +22,8 @@ object PlaceAccordingToAnchor {
   
     event.getWorld.setBlockState(event.getPos, anchor.currentState, 1)
   }
-  @SubscribeEvent
-  def putBlocks(event: BlockEvent.EntityMultiPlaceEvent): Unit ={
-    println("EntityMultiPlaceEvent")
-  }
+//  @SubscribeEvent
+//  def putBlocks(event: BlockEvent.EntityMultiPlaceEvent): Unit ={
+//    println("EntityMultiPlaceEvent")
+//  }
 }

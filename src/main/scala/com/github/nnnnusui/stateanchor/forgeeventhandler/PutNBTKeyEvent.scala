@@ -2,14 +2,14 @@ package com.github.nnnnusui.stateanchor.forgeeventhandler
 
 import com.github.nnnnusui.stateanchor.{Anchor, KeyBindings, StateAnchor}
 import net.minecraft.client.Minecraft
+import net.minecraftforge.client.event.InputEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.common.gameevent.TickEvent
 
 @Mod.EventBusSubscriber(modid = StateAnchor.modId, bus = Mod.EventBusSubscriber.Bus.FORGE)
 object PutNBTKeyEvent {
   @SubscribeEvent
-  def onKeyInput(event: TickEvent.ClientTickEvent): Unit ={
+  def onKeyInput(event: InputEvent.KeyInputEvent): Unit ={
     val valueIncKey = KeyBindings.valueInc.isPressed
     val valueDecKey = KeyBindings.valueDec.isPressed
     val propertyIncKey = KeyBindings.propertyInc.isPressed

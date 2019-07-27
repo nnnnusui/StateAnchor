@@ -14,8 +14,8 @@ object KeyBindings {
   private val description = KeyBind.Description
   val valueInc = new KeyBinding(description.valueInc, GLFW.GLFW_KEY_UP,   category)
   val valueDec = new KeyBinding(description.valueDec, GLFW.GLFW_KEY_DOWN, category)
-  val propertyInc = new KeyBinding(propertyInc, GLFW.GLFW_KEY_RIGHT, category)
-  val propertyDec = new KeyBinding(propertyDec, GLFW.GLFW_KEY_LEFT,  category)
+  val propertyInc = new KeyBinding(description.propertyInc, GLFW.GLFW_KEY_RIGHT, category)
+  val propertyDec = new KeyBinding(description.propertyDec, GLFW.GLFW_KEY_LEFT,  category)
 
   @SubscribeEvent
   def register(event: FMLCommonSetupEvent): Unit ={
