@@ -1,6 +1,6 @@
 package com.github.nnnnusui.stateanchor
 
-import com.github.nnnnusui.stateanchor.StateAnchor.KeyBind.{Description, category}
+import com.github.nnnnusui.stateanchor.StateAnchor.KeyBind
 import net.minecraft.client.settings.KeyBinding
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.client.registry.ClientRegistry
@@ -10,10 +10,18 @@ import org.lwjgl.glfw.GLFW
 
 @Mod.EventBusSubscriber(modid = StateAnchor.modId, bus = Mod.EventBusSubscriber.Bus.MOD)
 object KeyBindings {
-  val rotateMode = new KeyBinding(Description.rotateMode, GLFW.GLFW_KEY_R, category)
+  private val category = KeyBind.category
+  private val description = KeyBind.Description
+  val valueInc = new KeyBinding(description.valueInc, GLFW.GLFW_KEY_UP,   category)
+  val valueDec = new KeyBinding(description.valueDec, GLFW.GLFW_KEY_DOWN, category)
+  val propertyInc = new KeyBinding(propertyInc, GLFW.GLFW_KEY_RIGHT, category)
+  val propertyDec = new KeyBinding(propertyDec, GLFW.GLFW_KEY_LEFT,  category)
 
   @SubscribeEvent
   def register(event: FMLCommonSetupEvent): Unit ={
-    ClientRegistry.registerKeyBinding(rotateMode)
+    ClientRegistry.registerKeyBinding(valueInc)
+    ClientRegistry.registerKeyBinding(valueDec)
+    ClientRegistry.registerKeyBinding(propertyInc)
+    ClientRegistry.registerKeyBinding(propertyDec)
   }
 }
